@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.sdnuliu.secret.R;
 import com.sdnuliu.secret.framework.common.ActivityManager;
 import com.sdnuliu.secret.framework.utils.ToastUtils;
 import com.sdnuliu.secret.framework.widget.DialogLoading;
@@ -139,6 +140,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     public void showLoadingDialog() {
         if (loading == null) {
             loading = new DialogLoading(this);
+            loading.setMessage(getString(R.string.loading));
         }
         loading.show();
     }
