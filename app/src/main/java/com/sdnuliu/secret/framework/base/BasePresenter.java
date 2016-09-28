@@ -5,4 +5,6 @@ package com.sdnuliu.secret.framework.base;
  */
 public interface BasePresenter {
     void unsubscribe();
+
+    void start();
 }

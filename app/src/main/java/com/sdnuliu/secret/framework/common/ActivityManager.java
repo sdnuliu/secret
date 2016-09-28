@@ -2,6 +2,10 @@ package com.sdnuliu.secret.framework.common;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 
 import java.util.Stack;
 
@@ -111,6 +115,19 @@ public class ActivityManager {
     public void exit(Context context, boolean icClearCache) {
         finishAllActivity();
         //// TODO: 16/9/22 缓存清理以及其他待定事项
+    }
+
+    /**
+     * 添加fragment
+     * @param fragmentManager fragmentManager
+     * @param fragment fragment
+     * @param frameId
+     */
+    public static void addFragmentToActivity (@NonNull FragmentManager fragmentManager,
+                                              @NonNull Fragment fragment, int frameId) {
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.add(frameId, fragment);
+        transaction.commit();
     }
 
 }

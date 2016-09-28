@@ -15,7 +15,7 @@ public class ToastUtils {
     /**
      * 短时间显示Toast
      *
-     * @param message
+     * @param message content
      */
     public static void showShort(CharSequence message) {
         if (TextUtils.isEmpty(message)) {
@@ -28,7 +28,7 @@ public class ToastUtils {
     /**
      * 短时间显示Toast
      *
-     * @param message
+     * @param message content
      */
     public static void showShort(int message) {
         if (isShow)
@@ -38,7 +38,7 @@ public class ToastUtils {
     /**
      * 长时间显示Toast
      *
-     * @param message
+     * @param message content
      */
     public static void showLong(CharSequence message) {
         if (TextUtils.isEmpty(message)) {
@@ -51,7 +51,7 @@ public class ToastUtils {
     /**
      * 长时间显示Toast
      *
-     * @param message
+     * @param message content
      */
     public static void showLong(int message) {
         if (isShow)
@@ -61,8 +61,8 @@ public class ToastUtils {
     /**
      * 自定义显示Toast时间
      *
-     * @param message
-     * @param duration
+     * @param message content
+     * @param duration 时间
      */
     public static void show(CharSequence message, int duration) {
         if (TextUtils.isEmpty(message)) {
@@ -75,8 +75,8 @@ public class ToastUtils {
     /**
      * 自定义显示Toast时间
      *
-     * @param message
-     * @param duration
+     * @param message content
+     * @param duration 时间
      */
     public static void show(int message, int duration) {
         if (isShow)

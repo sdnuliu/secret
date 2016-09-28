@@ -15,12 +15,13 @@ import com.sdnuliu.secret.framework.common.ActivityManager;
 import com.sdnuliu.secret.framework.utils.ToastUtils;
 import com.sdnuliu.secret.framework.widget.DialogLoading;
 
+
 /**
  * Created by liuteng on 16/9/22.
  * activity 基类
  */
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements View.OnClickListener {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
 
     protected Context mContext;
     /**
@@ -29,11 +30,6 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected View mBaseView;
 
     protected String fromWhere;
-
-    /**
-     * 对应的Presenter
-     */
-    private T presenter;
 
     private DialogLoading loading;
 
@@ -62,11 +58,6 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         initViews();
         bindEvents();
         initFromWhere();
-    }
-
-    public void createPresenter(T presenter) {
-        if (presenter != null)
-            this.presenter = presenter;
     }
 
     /**
@@ -129,8 +120,6 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         super.onDestroy();
         ActivityManager.getInstance().removeActivity(this);
         mBaseView = null;
-        if (presenter != null)
-            presenter.unsubscribe();
     }
 
     protected void showToast(String info) {
@@ -151,4 +140,6 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         }
 
     }
+
+
 }
